@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>vue_test</title>
+  </head>
+  <body>
+  <div id='mintUI'>
+  <button @click="toast">Toast</button>
+  <button @click="indicator">Indicator</button>
+  <div>{{title}}</div>
+  <div id="custom" />
+  <div id='router'>
+    <h1>Hello App!</h1>
+    <p>
+      <!-- 使用 router-link 组件来导航. -->
+      <!-- 通过传入 `to` 属性指定链接. -->
+      <!-- <router-link> 默认会被渲染成一个 `<a>` 标签 -->
+      <router-link to="/">Go to Home</router-link>
+      <router-link to="/bar">Go to Bar</router-link>
+    </p>
+    <div>{{$route.meta.component}}</div>
+    <!-- 路由出口 -->
+    <!-- 路由匹配到的组件将渲染在这里 -->
+    <keep-alive :include="$route.meta.component">
+      <router-view></router-view>
+    </keep-alive>
+  </div>
+  </div>
+  <div style="display:none">
+    <div id="app">
+        {{message}}
+    </div>
+    <div id="app-2">
+      <span v-bind:title="message">
+        Hover your mouse over me for a few seconds to see my dynamically bound title!
+      </span>
+    </div>
+    <div id="app-3">
+      <p v-if="seen">Now you see me</p>
+    </div>
+
+    <div id="app-4">
+      <ol>
+        <li v-for="todo in todos">
+          {{ todo.text }}
+        </li>
+      </ol>
+    </div>
+
+    <div id="app-5">
+      <p>{{ message }}</p>
+      <button v-on:click="reverseMessage">Reverse Message</button>
+    </div>
+
+    <div id="app-6">
+      <p>{{ message }}</p>
+      <input v-model="message">
+    </div>
+    <div id="app-7">
+      <ol>
+        <!-- Now we provide each todo-item with the todo object    -->
+        <!-- it's representing, so that its content can be dynamic -->
+        <todo-item v-for="item in groceryList" v-bind:todo2="item"></todo-item>
+      </ol>
+    </div>
+
+    <div id="example">
+      <p>Original message: "{{ message }}"</p>
+      <p>Computed reversed message: "{{ reversedMessage }}"</p>
+    </div>
+    <div id="example1">
+      <p>Original message: "{{ message }}"</p>
+      <p>Computed reversed message: "{{ reversedMessage }}"</p>
+    </div>
+    <div id="demo">{{ fullName }}</div>
+    <!-- built files will be auto injected -->
+    </div>
+  </body>
+</html>
