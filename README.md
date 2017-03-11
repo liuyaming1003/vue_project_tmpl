@@ -1,5 +1,7 @@
 # vue_project_tmpl
 
+[Demo]: https://liuyaming1003.github.io/vue_project_tmpl/dist/
+
 # use vue keep-alive
 ```
 <keep-alive :include="keepAlive">
