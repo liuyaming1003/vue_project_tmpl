@@ -71,8 +71,9 @@ module.exports = {
             "sass-loader"
         ],
         include: path.join(__dirname, './../src/styles'),
+        
         exclude: "/node_modules/"
-      }
+      },
       {
 
         test: /\.less$/,
