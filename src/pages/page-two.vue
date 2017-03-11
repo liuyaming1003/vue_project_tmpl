@@ -1,6 +1,6 @@
 /*
- * 首页
- * @Date    : 2017-03-11 12:15:39
+ * 说明
+ * @Date    : 2017-03-11 14:01:57
  * @Author  : liuym (liuyaming1003@gmail.com)
  * @Version : V1.0
  *
@@ -8,11 +8,9 @@
 
 <template>
     <div class="page">
-        <nav-header title="首页" :showLeft="false" :showRight="false"></nav-header>
+        <nav-header title="页面2"></nav-header>
         <div class="container">
-        <router-link class="ft-item" active-class="router-active" to="/page-one">
-            页面1
-        </router-link>
+            <input />
         </div>
     </div>
 </template>
@@ -20,15 +18,14 @@
 //样式
 <style lang="scss" scoped>
     .container{
-        background: gray;
+        background: #ccc;
     }
-
 </style>
 
 <script type="text/javascript">
     import NavHeader from '../components/nav-header';
     export default {
-        name: 'home', //组件名称
+        name: 'page-two', //组件名称
         //组件声明
         components:{
             NavHeader,
@@ -49,15 +46,15 @@
         },
         //页面第一次加载完成
         mounted(){
-            //this.(function () {
+            this.$nextTick(function () {
                 // 代码保证 this. 在 document 中
-            // })
+            })
         },
 
         //创建之前
         beforeCreate(){
             //添加到缓冲机制中
-            this.$store.dispatch('pushKeepAlive', 'home');
+            this.$store.dispatch('pushKeepAlive', 'page-two');
         },
 
         //页面创建时
@@ -71,7 +68,7 @@
         },
         //组件从缓冲中使用会出发
         activated(){
-            console.log('home activated',);
+            console.log('page-two activated',);
         },
     }
 </script>

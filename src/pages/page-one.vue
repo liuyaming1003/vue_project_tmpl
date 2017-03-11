@@ -1,5 +1,5 @@
 /*
- * 首页
+ * 首页1
  * @Date    : 2017-03-11 12:15:39
  * @Author  : liuym (liuyaming1003@gmail.com)
  * @Version : V1.0
@@ -8,11 +8,12 @@
 
 <template>
     <div class="page">
-        <nav-header title="首页" :showLeft="false" :showRight="false"></nav-header>
+        <nav-header title="页面1" :showRight="false" ></nav-header>
         <div class="container">
-        <router-link class="ft-item" active-class="router-active" to="/page-one">
-            页面1
+        <router-link class="ft-item" active-class="router-active" to="/page-two">
+            页面2
         </router-link>
+        <input />
         </div>
     </div>
 </template>
@@ -20,15 +21,14 @@
 //样式
 <style lang="scss" scoped>
     .container{
-        background: gray;
+        background: #ccc;
     }
-
 </style>
 
 <script type="text/javascript">
     import NavHeader from '../components/nav-header';
     export default {
-        name: 'home', //组件名称
+        name: 'page-one', //组件名称
         //组件声明
         components:{
             NavHeader,
@@ -57,7 +57,7 @@
         //创建之前
         beforeCreate(){
             //添加到缓冲机制中
-            this.$store.dispatch('pushKeepAlive', 'home');
+            this.$store.dispatch('pushKeepAlive', 'page-one');
         },
 
         //页面创建时

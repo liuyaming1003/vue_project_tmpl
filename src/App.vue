@@ -1,12 +1,34 @@
 <template>
   <div id="app">
-    <router-view></router-view>
+      <transition 
+          :enter-active-class="enterAnimation" 
+          :leave-active-class="leaveAnimation"
+      >
+          <keep-alive :include="keepAlive">
+            <router-view></router-view>
+          </keep-alive>
+      </transition>
   </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
-  name: 'app'
+    name: 'app',
+    computed: mapState({
+        keepAlive: function(state){
+            console.log("keepArray", state.header.keepArray + "");
+            return state.header.keepArray + "";
+        },
+        enterAnimation : function(state){
+            console.log('enter', state.header.pageAnimation.enter)
+            return state.header.pageAnimation.enter;
+        },
+        leaveAnimation : function(state){
+            console.log('leave', state.header.pageAnimation.leave)
+            return state.header.pageAnimation.leave;  
+        }
+    }),
 }
 </script>
 
