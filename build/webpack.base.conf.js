@@ -19,7 +19,7 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json', '.css', '.less', '.sass','.scss'],
     modules: [
       resolve('src'),
       resolve('node_modules')
@@ -58,6 +58,25 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader',
+      },
+      {
+        test: /\.(scss|sass)$/,
+        use: [
+            "style-loader",
+            "css-loader",
+            "sass-loader"
+        ],
+        include: path.join(__dirname, './../src/styles'),
+        exclude: "/node_modules/"
+      }
+      {
+
+        test: /\.less$/,
+        loader: 'style-loader!css-loader!less-loader',
       }
     ]
   }
