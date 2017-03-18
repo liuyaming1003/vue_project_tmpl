@@ -9,7 +9,7 @@ function resolve (dir) {
 
 module.exports = {
   entry: {
-    app: './src/main.js'
+    app: ['babel-polyfill', './src/main.js']
   },
   output: {
     path: config.build.assetsRoot,
@@ -59,17 +59,17 @@ module.exports = {
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
       },
-      {
-        test: /\.css$/,
-        loader: 'style-loader!css-loader',
-      },
+      
       {
         test: /\.(scss|sass)$/,
-        use: [
-            "style-loader",
-            "css-loader",
-            "sass-loader"
-        ],
+        loader: 'style-loader!css-loader!postcss-loader!sass-loader',
+        // use: [
+        //     "style-loader",
+        //     "css-loader",
+        //     "postcss-loader",
+        //     "sass-loader",
+            
+        // ],
         include: path.join(__dirname, './../src/styles'),
         
         exclude: "/node_modules/"
@@ -77,8 +77,12 @@ module.exports = {
       {
 
         test: /\.less$/,
-        loader: 'style-loader!css-loader!less-loader',
-      }
+        loader: 'style-loader!css-loader!postcss-loader!less-loader',
+      },
+      {
+        test: /\.css$/,
+        loader: 'style-loader!css-loader!postcss-loader',
+      },
     ]
   }
 }

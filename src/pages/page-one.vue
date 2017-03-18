@@ -65,7 +65,7 @@
 
         //页面创建时
         created(){
-            return bb;
+
         },
 
         //方法

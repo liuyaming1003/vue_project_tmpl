@@ -14,7 +14,14 @@
 
 //样式
 <style lang="scss" scoped>
-
+    .container{
+        flex: 1;
+        overflow: scroll;
+        -webkit-overflow-scrolling: touch;
+        position: relative;
+        flex-direction: column;
+        display: flex;
+    }
 </style>
 
 <script type="text/javascript">
