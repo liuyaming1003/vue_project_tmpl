@@ -9,11 +9,12 @@
 <template>
     <div class="page">
         <nav-header title="首页" :showLeft="false" :showRight="false"></nav-header>
-        <div class="container">
-        <router-link class="ft-item" active-class="router-active" to="/page-one">
-            页面1
-        </router-link>
-        </div>
+        <Container>
+            <p v-for="n in 20">{{n}}</p>
+            <router-link class="ft-item" active-class="router-active" to="/page-one">
+                页面1
+            </router-link>
+        </Container>
     </div>
 </template>
 
@@ -27,11 +28,13 @@
 
 <script type="text/javascript">
     import NavHeader from '../components/nav-header';
+    import Container from '../components/container';
     export default {
         name: 'home', //组件名称
         //组件声明
         components:{
             NavHeader,
+            Container,
         },
         //数据
         data(){
@@ -62,7 +65,7 @@
 
         //页面创建时
         created(){
-
+            
         },
 
         //方法
