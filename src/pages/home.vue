@@ -43,11 +43,11 @@
             }
         },
         //监听
-        watch (){
+        watch:{
             
         },
         //计算
-        computed (){
+        computed:{
 
         },
         //页面第一次加载完成
