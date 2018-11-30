@@ -36,14 +36,6 @@
 
             }
         },
-        //监听
-        watch :{
-            
-        },
-        //计算
-        computed :{
-
-        },
         //页面第一次加载完成
         mounted(){
             this.$nextTick(function () {
@@ -55,16 +47,6 @@
         beforeCreate(){
             //添加到缓冲机制中
             this.$store.dispatch('pushKeepAlive', 'page-two');
-        },
-
-        //页面创建时
-        created(){
-
-        },
-
-        //方法
-        methods:{
-
         },
         //组件从缓冲中使用会出发
         activated(){

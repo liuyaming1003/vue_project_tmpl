@@ -42,20 +42,6 @@
 
             }
         },
-        //监听
-        watch:{
-            
-        },
-        //计算
-        computed:{
-
-        },
-        //页面第一次加载完成
-        mounted(){
-            //this.(function () {
-                // 代码保证 this. 在 document 中
-            // })
-        },
 
         //创建之前
         beforeCreate(){
