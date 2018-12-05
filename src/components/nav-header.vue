@@ -30,7 +30,7 @@
         line-height: 44px;
         box-sizing: border-box;
         padding: 0px 10px 0px 10px;
-        background: #ff3e33;
+        background: #4bb9f8;
         color: #fff;
         display: flex;
 

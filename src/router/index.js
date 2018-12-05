@@ -8,27 +8,15 @@ var routers = new Router({
     {
         path: '/',
         component: (resolve) => {
-            require(['../pages/home'], resolve)
+            require(['../pages/home/index'], resolve)
         },
     },
     {
-        path: '/home',
+        path: '/index',
         component: (resolve) => {
-            require(['../pages/home'], resolve)
+            require(['../pages/home/index'], resolve)
         },
     },
-    {
-        path: '/page-one',
-        component: (resolve) => {
-            require(['../pages/page-one'], resolve)
-        },
-    },
-    {
-        path: '/page-two',
-        component: (resolve) => {
-            require(['../pages/page-two'], resolve)
-        },
-    }
   ]
 });
 

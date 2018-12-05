@@ -16,11 +16,16 @@
 <style lang="scss" scoped>
     .container{
         flex: 1;
-        overflow: scroll;
+        overflow-y: scroll;
+        overflow-x: hidden;
         -webkit-overflow-scrolling: touch;
         position: relative;
-        flex-direction: column;
-        display: flex;
+        // flex-direction: column;
+        // display: flex;    //适配ios8 和 安卓5.0
+    }
+
+    .container::-webkit-scrollbar{
+        display: none;
     }
 </style>
 
@@ -35,7 +40,7 @@
         //组件从缓冲中使用会出发
         activated(){
             console.log('container activated',);
-            this.$el.scrollTop =  this.scrollTop; 
+            this.$el.scrollTop =  this.scrollTop;
         },
 
         deactivated(){
